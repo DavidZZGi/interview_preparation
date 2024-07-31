@@ -53,9 +53,9 @@ class PokemonPageState extends State<PokemonPage> {
       body: BlocBuilder<PokemonBloc, PokemonState>(
         builder: (context, state) {
           if (state is PokemonInitial) {
-            return Center(child: Text('Welcome! Fetching Pokémon...'));
+            return const Center(child: Text('Welcome! Fetching Pokémon...'));
           } else if (state is PokemonLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is PokemonSuccess) {
             return Row(
               children: [
@@ -77,11 +77,11 @@ class PokemonPageState extends State<PokemonPage> {
                         ),
                         title: Text(
                           pokemon.name,
-                          style: TextStyle(color: Colors.black87),
+                          style: const TextStyle(color: Colors.black87),
                         ),
                         subtitle: Text(
                           'Height: ${pokemon.height}m, Weight: ${pokemon.weight}kg',
-                          style: TextStyle(color: Colors.black54),
+                          style: const TextStyle(color: Colors.black54),
                         ),
                         onTap: () {
                           setState(() {
@@ -96,7 +96,8 @@ class PokemonPageState extends State<PokemonPage> {
                 Expanded(
                   flex: 1,
                   child: _selectedPokemon == null
-                      ? Center(child: Text('Select a Pokémon to see details'))
+                      ? const Center(
+                          child: Text('Select a Pokémon to see details'))
                       : Container(
                           color: detailBackgroundColor,
                           padding: const EdgeInsets.all(16.0),

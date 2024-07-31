@@ -1,16 +1,34 @@
-# interview_preparation
+# Pokémon App
 
-A new Flutter project.
+Una aplicación web desarrollada en Flutter que muestra una lista de Pokémon y permite ver detalles de cada uno. Utiliza la PokeAPI para obtener datos y aplica la arquitectura Clean Architecture junto con BLoC para la gestión del estado.
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- **Lista de Pokémon**: Muestra un listado de los primeros 100 Pokémon con su nombre y foto.
+- **Detalles del Pokémon**: Muestra información detallada del Pokémon seleccionado, incluyendo experiencia base, altura, peso y habilidades.
+- **Búsqueda**: Permite filtrar Pokémon por nombre utilizando un campo de búsqueda en el `AppBar`.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologías Utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: Framework para el desarrollo de la interfaz de usuario.
+- **PokeAPI**: API pública para obtener datos de Pokémon.
+- **BLoC**: Patrón de gestión de estado utilizado para manejar el estado de la aplicación.
+- **Clean Architecture**: Estructura de código para mantener la separación de responsabilidades y escalabilidad.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Instalación
+
+1. **Clona el repositorio**:
+   ```sh
+   git clone https://github.com/tu-usuario/tu-repo.git
+   cd tu-repo
+   Instala las dependencias:
+   ```
+
+sh
+Copiar código
+flutter pub get
+Ejecuta la aplicación:
+
+sh
+Copiar código
+flutter run
