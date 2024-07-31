@@ -24,9 +24,7 @@ Una aplicación web desarrollada en Flutter que muestra una lista de Pokémon y 
    Instala las dependencias:
    ```
 
-Copiar código
 flutter pub get
-Ejecuta la aplicación:
 
-Copiar código
+Ejecuta la aplicación:
 flutter run
