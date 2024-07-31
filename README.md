@@ -21,10 +21,8 @@ Una aplicación web desarrollada en Flutter que muestra una lista de Pokémon y 
    ```sh
    git clone https://github.com/tu-usuario/tu-repo.git
    cd tu-repo
-   Instala las dependencias:
+   Instala las dependencias: flutter pub get
    ```
-
-flutter pub get
 
 Ejecuta la aplicación:
 flutter run
