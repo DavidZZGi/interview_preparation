@@ -1,38 +1,28 @@
 import 'package:dio/dio.dart';
 import '../models/pokemon_model.dart';
 
-class ProductApiService {
+class PokemonService {
   final Dio dio;
 
-  ProductApiService({required this.dio});
+  PokemonService({required this.dio});
 
-  Future<List<Pokemon>> fetchProducts() async {
+  Future<List<Pokemon>> getPokemons() async {
     try {
-      final response = await dio.get('/products');
-      List<dynamic> data = response.data;
-      return data.map((productJson) => Pokemon.fromJson(productJson)).toList();
-    } on DioException catch (e) {
-      print('Error fetching products: ${e.message}');
-      rethrow;
-    }
-  }
+      final response =
+          await dio.get('https://pokeapi.co/api/v2/pokemon?limit=50');
+      final results = response.data['results'] as List;
 
-  Future<Pokemon> fetchProductById(int id) async {
-    try {
-      final response = await dio.get('/products/$id');
-      return Pokemon.fromJson(response.data);
-    } on DioException catch (e) {
-      print('Error fetching product: ${e.message}');
-      rethrow;
-    }
-  }
+      // Fetch details for each Pokémon
+      final List<Pokemon> pokemons = [];
+      for (var result in results) {
+        final pokemonResponse = await dio.get(result['url']);
+        final pokemon = Pokemon.fromJson(pokemonResponse.data);
+        pokemons.add(pokemon);
+      }
 
-  Future<void> createProduct(Pokemon pokemon) async {
-    try {
-      await dio.post('/products', data: pokemon.toJson());
-    } on DioException catch (e) {
-      print('Error creating product: ${e.message}');
-      rethrow;
+      return pokemons;
+    } catch (e) {
+      return [];
     }
   }
 }

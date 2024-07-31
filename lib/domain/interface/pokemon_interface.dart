@@ -1,5 +1,5 @@
-import '../entities/pokemon_entities.dart';
+import '../../data/models/pokemon_model.dart';
 
 abstract class PokemonInterface {
-  Future<List<PokemonEntity>> getProducts();
+  Future<List<Pokemon>> getPokemons();
 }

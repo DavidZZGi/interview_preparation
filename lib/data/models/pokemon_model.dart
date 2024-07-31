@@ -23,12 +23,14 @@ class Pokemon {
       height: json['height'].toDouble(),
       weight: json['weight'].toDouble(),
       abilities: (json['abilities'] as List)
-          .map((a) => a['ability']['name'])
-          .toList() as List<String>,
+          .map((a) => a['ability']['name'] as String)
+          .toList(),
     );
   }
+
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'base_experience': baseExperience,
       'height': height,

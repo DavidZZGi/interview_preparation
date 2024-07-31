@@ -1,2 +1,2 @@
-export 'product_card.dart';
-export 'product_list.dart';
+export 'pokemon_card.dart';
+export 'pokemon_list.dart';

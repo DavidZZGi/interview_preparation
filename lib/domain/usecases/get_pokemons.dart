@@ -1,3 +1,4 @@
+import '../../data/models/pokemon_model.dart';
 import '../../data/repository/pokemon_repository.dart';
 import '../entities/pokemon_entities.dart';
 
@@ -6,7 +7,7 @@ class GetPokemons {
 
   GetPokemons({required this.repository});
 
-  Future<List<PokemonEntity>> call() async {
-    return await repository.getProducts();
+  Future<List<Pokemon>> call() async {
+    return await repository.getPokemons();
   }
 }

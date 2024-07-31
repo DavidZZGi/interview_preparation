@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:interview_preparation/presentation/widgets/product_card.dart';
+import 'package:interview_preparation/presentation/widgets/pokemon_card.dart';
 
 import '../../state_management/riverpood.dart';
 
